@@ -16,9 +16,9 @@ public class LoginDea {
 	
 	public boolean validate(LoginBean loginBean) throws ClassNotFoundException {
 		boolean status = false;
-		String url = "jdbc:mysql://localhost:3306/mydb";
+		String url = "jdbc:mysql://localhost:3306/company";
 		String username = "root";
-		String password = "root";
+		String password = "Pok5m2ud";
 /*
  * 	String uemail = request.getParameter("username");
 		String upwd = request.getParameter("password");

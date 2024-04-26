@@ -1,6 +1,7 @@
 package oop.webApp.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,9 +24,22 @@ public class AddUserServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		String uname = request.getParameter("name");
+		String upwd = request.getParameter("pass");
+		String uemail = request.getParameter("email");
+		String umobile = request.getParameter("repass");
 		
+		PrintWriter out = response.getWriter();
+		out.print(uname);
+		out.print(upwd);
+		out.print(uemail);
+		out.print(umobile);
+		
+		/*
+		//doGet(request, response);
+		RequestDispatcher dispatcher = null;
 		response.setContentType("text/html");
+		try {
 		
 		RegisterBean registerBean = new RegisterBean();
 		
@@ -38,8 +52,15 @@ public class AddUserServlet extends HttpServlet {
 		iRegisterService.addUser(registerBean);
 		
 		request.setAttribute("user", registerBean);
-		RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/index.jsp");
-		requestDispatcher.forward(request, response);
+		dispatcher = request.getRequestDispatcher("index.jsp");
+		dispatcher.forward(request, response);
+		} catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		*/
+		//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
+		//dispatcher.forward(request, response);
 		
 //		RegisterDeo registerDeo = new RegisterDeo();
 //
